@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasanth Kumar's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="background-video">
+        <video autoplay muted loop>
+            <source src="./technology-background-video-loop-for-website.mp4" type="video/mp4">
+        </video>
+    </div>
+    <header>
+        <div class="container">
+            <h1>Prasanth Kumar</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                    <li><a href="prasanth_resume.pdf" download="prasanth_resume">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="about" class="section">
+            <div class="content">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>Hello! I'm Prasanth Kumar from Guntur, currently pursuing a degree in Computer Science Engineering with a specialization in Artificial Intelligence and Machine Learning at Gayatri Vidya Parishad College of Engineering. My passion lies in the realm of AI and ML, where I thrive on exploring new technologies and implementing innovative solutions.</p>
+                    <img src="./WhatsApp Image 2024-07-15 at 17.44.56_0e54e2ec.jpg" alt="Prasanth Kumar">
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="section">
+            <div class="content">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill">
+                        <img src="./Designer.png" alt="Programming Languages">
+                        <h3>Programming Languages</h3>
+                        <p>C, C++, Python</p>
+                    </div>
+                    <div class="skill">
+                        <img src="./Designer (1).png" alt="Web Development">
+                        <h3>Web Development</h3>
+                        <p>HTML, CSS, JavaScript, PHP</p>
+                    </div>
+                    <div class="skill">
+                        <img src="tools.png" alt="Tools & Technologies">
+                        <h3>Tools & Technologies</h3>
+                        <p>TensorFlow, OpenCV, MySQL</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skil.png" alt="Soft Skills">
+                        <h3>Soft Skills</h3>
+                        <p>Communication, Team Coordination</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <div class="content">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Face Emotion Detection Using Python</h3>
+                        <p>Developed a machine learning model to detect and analyze facial emotions. Utilized libraries like TensorFlow and OpenCV for real-time emotion recognition.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Laptop Service Management System</h3>
+                        <p>Built a web-based application using PHP, HTML, CSS, and JavaScript. This system allows users to submit service requests for laptops, and service providers to manage and track these requests.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Object Detection Using TensorFlow</h3>
+                        <p>Created a model for detecting objects in images and videos using TensorFlow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section id="contact" class="section">
+        <div class="content">
+            <h2>Contact Me</h2>
+            <form action="submit_form.php" method="POST">
+                <div class="box">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="box">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="box">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <a href="https://www.linkedin.com/in/prasanthkumar-bhumula-71bb5125a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkdein</a>
+            <a href="https://github.com/prasanth1221" target="_blank">github</a>
+            <a href="https://x.com/Prasant59924413?t=RvQ4S3vN2OtCldzFRI7tIg&s=09" target="_blank">twitter</a>
+            <a href="https://www.instagram.com/prasanthbhumula?igsh=MWJkZ3Bkd2wzM3RrcA==" target="_blank">instagram</a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav ul li a');
+            for (const link of navLinks) {
+                link.addEventListener('click', smoothScroll);
+            }
+
+            function smoothScroll(event) {
+                event.preventDefault();
+                const targetId = event.currentTarget.getAttribute('href').substring(1);
+                const targetPosition = document.getElementById(targetId).offsetTop;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+
+            const contactForm = document.querySelector('form');
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (name === '' || email === '' || message === '') {
+                    alert('Please fill in all fields.');
+                } else {
+                    alert('Thank you for your message!');
+                    contactForm.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
